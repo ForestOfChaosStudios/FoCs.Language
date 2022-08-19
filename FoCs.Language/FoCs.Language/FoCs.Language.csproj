@@ -1,12 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+		<PropertyGroup>
+				<TargetFramework>netstandard2.1</TargetFramework>
+		</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Superpower" Version="3.0.0" />
-  </ItemGroup>
+		<ItemGroup>
+				<Compile Remove="Parsers\**" />
+				<EmbeddedResource Remove="Parsers\**" />
+				<Compile Remove="Enum,\**" />
+				<EmbeddedResource Remove="Enum,\**" />
+				<None Remove="Enum,\**" />
+				<None Remove="Parsers\**" />
+		</ItemGroup>
+
+		<ItemGroup>
+						  <Compile Include="Parsers\DateTimeTextParser.cs" />
+<Compile Include="Parsers\TextParsers.cs" />
+		</ItemGroup>
+
+		<ItemGroup>
+				<PackageReference Include="Superpower" Version="3.0.0" />
+		</ItemGroup>
+
+		<ItemGroup>
+				<Folder Include="Extensions\" />
+				<Folder Include="Results\" />
+				<Folder Include="Tokens\" />
+				<Folder Include="Enum\" />
+		</ItemGroup>
 
 </Project>
